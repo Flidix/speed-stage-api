@@ -14,8 +14,8 @@ import { Environment } from '@shared/variables/environment';
   app.use(cookieParser());
   app.setGlobalPrefix(Environment.API_PREFIX);
   app.enableCors({
-    origin: (callback) => {
-      callback(null, true);
+    origin: (origin, callback) => {
+      callback(null, origin);
     },
     credentials: true,
   });
