@@ -15,7 +15,7 @@ import { Environment } from '@shared/variables/environment';
   app.setGlobalPrefix(Environment.API_PREFIX);
   app.enableCors({
     credentials: true,
-    origin: Environment.ALLOWED_ORIGINS.split(';'),
+    origin: true,
   });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }));
 
