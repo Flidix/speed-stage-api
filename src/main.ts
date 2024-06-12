@@ -13,7 +13,10 @@ import { Environment } from '@shared/variables/environment';
   app.enableShutdownHooks();
   app.use(cookieParser());
   app.setGlobalPrefix(Environment.API_PREFIX);
-  app.enableCors();
+  app.enableCors({
+    credentials: true,
+    origin: '*',
+  });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }));
 
   const swaggerDocument = SwaggerModule.createDocument(app, swagger);
